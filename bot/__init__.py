@@ -114,7 +114,7 @@ LOGGER = logging.getLogger(__name__)
 
 load_dotenv('config.env', override=True)
 
-BOT_TOKEN = environ.get('BOT_TOKEN', '')
+BOT_TOKEN = environ.get('BOT_TOKEN', '7898334718:AAEaJ51vpRgFfVBDzweZPqJicglnAEzZE-k')
 if len(BOT_TOKEN) == 0:
     log_error("BOT_TOKEN variable is missing! Exiting now")
     exit(1)
