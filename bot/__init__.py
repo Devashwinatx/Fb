@@ -535,10 +535,10 @@ try:
         workers=1000
     )
     bot.start()
-except pyrogram.errors.FloodWait as e:
-    print(f"Flood wait: Sleeping for {e.value} seconds")
-    time.sleep(e.value + 10)  # Extra buffer
-    bot.start()  # Retry after wait
+except FloodWait as e:
+    LOGGER.error(f"FloodWait triggered: Must wait {e.value} seconds.")
+    asyncio.sleep(e.value)  # Wait for the specified duration
+    bot.start()
 bot_loop = bot.loop
 bot_name = bot.me.username
 scheduler = AsyncIOScheduler(timezone=str(get_localzone()), event_loop=bot_loop)
