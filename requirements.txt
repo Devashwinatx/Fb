@@ -19,3 +19,4 @@ requests
 shortzy
 ffmpeg-python
 telegraph
+marshmallow==3.26.1
